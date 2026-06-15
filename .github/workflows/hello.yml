@@ -7,9 +7,9 @@ jobs:
   greet:
     runs-on: ubuntu:latest
 
-  steps:
-    - name: code checkout
-      uses: "actions/checkout@v4"
+    steps:
+      - name: code checkout
+        uses: "actions/checkout@v4"
 
-    - name: print hello
-      uses: echo "Hello from GitHub Actions!"
+      - name: print hello
+        uses: echo "Hello from GitHub Actions!"
