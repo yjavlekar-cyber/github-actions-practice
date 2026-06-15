@@ -3,8 +3,8 @@ on:
   push:
     branches: [ "main" ]
 
-jobs: 
-  - name: greet
+jobs:
+  greet:
     runs_on: ubuntu:latest
 
   steps:
