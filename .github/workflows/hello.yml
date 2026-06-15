@@ -4,8 +4,8 @@ on:
     branches: [ "main" ]
 
 jobs: 
-  name: greet
-  runs_on: ubuntu:latest
+  - name: greet
+    runs_on: ubuntu:latest
 
   steps:
     - name: code checkout
