@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "main" ]
 
-job: 
+jobs: 
   name: greet
   runs_on: ubuntu:latest
 
