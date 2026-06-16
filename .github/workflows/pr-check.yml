@@ -9,5 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: code checkout
+        uses: "actions/checkout@v4"
+
       - name: prints branch confirmation
         run: echo "PR check running for branch: ${{ github.ref_name }}"
