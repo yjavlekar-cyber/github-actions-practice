@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  matrix_strategy:
+  new:
   startegy:
     matrix:
       version: [ 10,12,14 ]
