@@ -1,14 +1,11 @@
+---
 name: scheduled
-
 on:
   schedule:
-    - cron: "54  8 * * *" 
-
-
+    - cron: "55  8 * * *"
 jobs:
   new:
     runs-on: ubuntu-latest
-
   steps:
     - name: prints
       run: echo "Succesfull."
