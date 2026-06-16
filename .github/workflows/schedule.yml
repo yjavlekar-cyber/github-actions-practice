@@ -2,10 +2,14 @@
 name: scheduled
 on:
   schedule:
-    - cron: "55  8 * * *"
+    - cron: "01 9 * * *"
 jobs:
   new:
     runs-on: ubuntu-latest
-  steps:
-    - name: prints
-      run: echo "Succesfull."
+    steps:
+     - name: code checkout
+       uses: "actions/checkout@v4"
+
+
+     - name: success
+       run: echo "Succesfull."
