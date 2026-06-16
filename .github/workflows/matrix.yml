@@ -1,0 +1,15 @@
+name: matrix_strategy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  startegy:
+    matrix:
+      version: [ 10,12,14]
+      os: [ ubuntu-latest ]
+
+      steps:
+        - name: os
+          run : echo "cat /etc/os-release"
