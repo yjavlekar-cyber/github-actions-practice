@@ -2,12 +2,12 @@ name: scheduled
 
 on:
   schedule:
-    - cron: "52  8 * * *" 
+    - cron: "54  8 * * *" 
 
 
 jobs:
   new:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
   steps:
     - name: prints
