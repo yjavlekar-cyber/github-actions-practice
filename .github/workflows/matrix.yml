@@ -1,4 +1,4 @@
-name: matrix_strategy
+name: checking
 
 on:
   push:
