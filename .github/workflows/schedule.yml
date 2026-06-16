@@ -2,7 +2,7 @@ name: pull-request
 
 on:
   schedule:
-    - cron: "45 14 * * *"
+    - cron: "55 14 16 6 *"
 
 jobs:
   print:
