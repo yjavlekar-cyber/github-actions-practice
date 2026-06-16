@@ -14,4 +14,4 @@ jobs:
         uses: "actions/checkout@v4"
 
       - name: prints branch confirmation
-        run: echo "PR check running for branch: ${{ github.head_ref }}"
+        run: echo "PR check running for branch ${{ github.head_ref }}"
