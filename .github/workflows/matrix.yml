@@ -7,7 +7,7 @@ on:
 jobs:
   startegy:
     matrix:
-      version: [ 10,12,14]
+      version: [ 10,12,14 ]
       os: [ ubuntu-latest ]
 
       steps:
