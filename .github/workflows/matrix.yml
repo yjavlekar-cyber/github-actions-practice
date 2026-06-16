@@ -13,6 +13,6 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-      steps:
-        - name: os
-          run : echo "cat /etc/os-release"
+    steps:
+       - name: os
+         run : echo "cat /etc/os-release"
