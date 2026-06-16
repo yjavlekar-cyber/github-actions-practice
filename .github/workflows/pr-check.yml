@@ -3,6 +3,7 @@ name: pull-request
 on:
   pull_request:
     branches: [ "main" ]
+    types: [ "opened" ]
 
 jobs:
   print:
@@ -13,7 +14,4 @@ jobs:
         uses: "actions/checkout@v4"
 
       - name: prints branch confirmation
-        env:
-          Branch_name: ${{ github.head_ref }}
-
-        run: echo "PR check running for branch: $Branch_name"
+        run: echo "PR check running for branch: {{ github.head_ref }}"
