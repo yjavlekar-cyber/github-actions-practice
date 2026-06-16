@@ -2,7 +2,7 @@
 name: scheduled
 on:
   schedule:
-    - cron: "06 9 * * *"
+    - cron: "10 21 * * *"
 jobs:
   new:
     runs-on: ubuntu-latest
