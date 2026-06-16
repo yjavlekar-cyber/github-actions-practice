@@ -5,10 +5,13 @@ on:
     branches: [ "main" ]
 
 jobs:
+  matrix_strategy:
   startegy:
     matrix:
       version: [ 10,12,14 ]
       os: [ ubuntu-latest ]
+
+    runs-on: ${{ matrix.os }}
 
       steps:
         - name: os
