@@ -1,0 +1,16 @@
+name: pull-request
+
+on:
+  schedule:
+    - cron: "45 14 * * *"
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        uses: "actions/checkout@v4"
+
+      - name: prints branch confirmation
+        run: echo "PR check running for branch ${{ github.head_ref }}"
