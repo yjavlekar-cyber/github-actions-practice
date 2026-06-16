@@ -6,7 +6,7 @@ on:
 
 jobs:
   new:
-   startegy:
+   strategy:
     matrix:
       version: [ 10,12,14 ]
       os: [ ubuntu-latest ]
