@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: OS
-        run: cat /etc/os-release
+        run: Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture
 
       - name: hots
         run: hostname
@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: OS
-        run: cat /etc/os-release
+        run: sw_vers
 
       - name: hots
         run: hostname
