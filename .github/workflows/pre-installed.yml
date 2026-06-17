@@ -2,7 +2,7 @@ name: pre
 
 on:
   push:
-    branches:[ "main" ]
+    branches: [ "main" ]
 
 jobs:
   check:
