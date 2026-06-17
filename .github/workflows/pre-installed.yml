@@ -1,0 +1,24 @@
+name: pre
+
+on:
+  push:
+    branches:[ "main" ]
+
+jobs:
+  check:
+    runs-on: ubuntu:latest
+
+    steps:
+      - name: docker version
+        run: docker --version
+
+      - name: python version
+        run: python --version
+
+      - name: node version
+        run: node --version
+
+      - name: git v
+        run: git --version
+
+

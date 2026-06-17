@@ -1,9 +1,5 @@
 name: checking
 
-on:
-  push:
-    branches: [ "main" ]
-
 jobs:
   new:
    strategy:
