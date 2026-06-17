@@ -1,0 +1,44 @@
+name: parallel
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: OS
+        run: cat /etc/os-release
+
+      - name: hots
+        run: hostname
+
+      - name: user
+        run: whoami
+  second:
+    runs-on: windows-latest
+
+    steps:
+      - name: OS
+        run: cat /etc/os-release
+
+      - name: hots
+        run: hostname
+
+      - name: user
+        run: whoami
+
+  third:
+    runs-on: macos-latest
+
+    steps:
+      - name: OS
+        run: cat /etc/os-release
+
+      - name: hots
+        run: hostname
+
+      - name: user
+        run: whoami
