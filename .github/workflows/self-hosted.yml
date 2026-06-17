@@ -1,0 +1,19 @@
+name: self
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  self_os:
+    runs-on: self-hosted
+
+    steps:
+      - name: host
+        run: hostname
+
+      - name: working dir
+        run: pwd
+
+      - name: new-file
+        run: mkdir created-via-git
