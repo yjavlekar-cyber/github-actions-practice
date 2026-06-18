@@ -16,4 +16,4 @@ jobs:
         run: pwd
 
       - name: new-file
-        run: mkdir created-via-git
+        run: mkdir created-via-selfhosted-runner
