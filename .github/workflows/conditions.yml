@@ -27,14 +27,17 @@ jobs:
 
   deploys:
     runs-on: ubuntu-latest
-      if: github.event_name == 'push'
+    if: github.event_name == 'push'
 
-      steps:
-        - name: deploy
-          run: echo "Deploying started"
+    steps:
+      - name: deploy
+        run: echo "Deploying started"
 
   linter:
     runs-on: ubuntu-latest
+
+    steps:
+
       - name: to check the code
         continue-on-error: true
         run: npm build
