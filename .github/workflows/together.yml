@@ -1,0 +1,33 @@
+name: together
+
+on:
+  push:
+    branch: [ "any" ]
+
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: linting
+        run: echo "linting has started"
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: testing
+        run: echo "testing has started"
+
+  summary:
+    runs-on: ubuntu-latest
+    needs: [ lint,test ]
+
+    steps:
+      - name: prints branch name
+        run: echo "${{ githun.ref_name }}pushed this"
+
+
+      - name: print commit message
+        run: echo "${{ github.event.commits[0].message }}"
