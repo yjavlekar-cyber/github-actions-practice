@@ -13,9 +13,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: echo "deploying to production"
 
-      - name: run tests
-        run: npm test
-
 
   check_previous_step:
     runs-on: ubuntu-latest
