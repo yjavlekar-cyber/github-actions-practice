@@ -1,0 +1,29 @@
+name: job-outputs
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    outputs:
+      my_job_output: ${{ steps.print.outputs.yogesh }}
+
+
+    steps:
+      - id: print
+        run: echo "yogesh=profound" >> "$GITHUB_OUTPUT"
+
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+
+    steps:
+      env:
+        my_output: ${{ needs.job1.outputs.my_job_output }}
+
+      run: echo "$my_output"
