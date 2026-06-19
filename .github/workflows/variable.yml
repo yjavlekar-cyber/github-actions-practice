@@ -1,25 +1,20 @@
-env:
-  APP_NAME: myapp
-
-name: $APP_NAME
+name: variable
 
 on:
   push:
     branches: [ "main" ]
 
-
-env: 
-  ENVIRONMENT: staging
+env:
+  APP_NAME: myapp
 
 jobs:
-  $ENVIRONMENT:
+  variables_list:
     runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: staging
+
 
     steps:
-
-      env:
-        VERSION: 1.0.0
-
       - name: print version
         run: echo "$VERSION"
 
@@ -29,4 +24,5 @@ jobs:
       - name: print environment
         run: echo "$ENVIRONMENT"
 
-
+        env:
+          VERSION: 1.0.0
