@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: prints branch name
-        run: echo "${{ githun.ref_name }}pushed this"
+        run: echo "${{ github.ref_name }}pushed this"
 
 
       - name: print commit message
