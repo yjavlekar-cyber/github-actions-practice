@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: run npm
+        run: npm build 
+
       - name: check previous step
         if: failure()
         run: echo "sending alert"
