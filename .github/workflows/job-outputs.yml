@@ -23,7 +23,8 @@ jobs:
     needs: job1
 
     steps:
-      env:
-        my_output: ${{ needs.job1.outputs.my_job_output }}
+      - name: use output from job1
+        env:
+          my_output: ${{ needs.job1.outputs.my_job_output }}
 
-      run: echo "$my_output"
+        run: echo "$my_output"
