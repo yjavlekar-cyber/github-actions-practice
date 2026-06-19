@@ -1,0 +1,43 @@
+name: conditions
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  conditionals:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: runs only if branch is main
+        if: github.ref == 'refs/heads/main'
+        run: echo "deploying to production"
+
+      - name: run tests
+        run: npm test
+
+
+  check_previous_step:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check previous step
+        if: failure()
+        run: echo "sending alert"
+
+  deploys:
+    runs-on: ubuntu-latest
+      if: github.event_name == 'push'
+
+      steps:
+        - name: deploy
+          run: echo "Deploying started"
+
+  linter:
+    runs-on: ubuntu-latest
+      - name: to check the code
+        continue-on-error: true
+        run: npm build
+
+      - name: check code
+        run: echo "code linted successfully"
