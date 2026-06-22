@@ -1,5 +1,4 @@
 name: health_check
-
 on:
   push:
     branches: [ "main" ]
@@ -9,12 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Explicitly enforcing pipefail
-        shell: bash
-        run: |
-          set -eo pipefail
-          invalid_command | grep "success"
-
       - name: code checkout
         uses: actions/checkout@v4
 
