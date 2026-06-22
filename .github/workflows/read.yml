@@ -10,5 +10,5 @@ jobs:
 
     steps:
       - name: to read from repo
-        run: echo "My secret is- ${{ secrets.MY_DEPOSITORY_SECRET }}"
+        run: echo "My secret is- ${{ secrets.NEWSECRET }}"
 
