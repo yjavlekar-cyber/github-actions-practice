@@ -15,9 +15,9 @@ jobs:
     steps:
       - id: generatefile
         run: |
-          echo "_____New_file____" > test.txt
-          echo "timestamp-$(date)" >> test.txt
-          echo "status-SUCCESS" >> test.txt
+          echo "_____New_file____" | tee test.txt
+          echo "timestamp-$(date)" | tee -a test.txt
+          echo "status-SUCCESS" | tee -a test.txt
           echo "status_msg=File generated successfully" >> "$GITHUB_OUTPUT"
 
       - name: upload artifacts
