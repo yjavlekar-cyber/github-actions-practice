@@ -11,5 +11,8 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v4
 
+      - name: change permisions
+        run: chmod +x healthcheck.sh
+
       - name: script execution
         run: ./healthcheck.sh
