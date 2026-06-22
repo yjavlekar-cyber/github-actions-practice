@@ -1,0 +1,20 @@
+name: artifacts
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: generatefile
+        run: |
+          echo "_____New_file____" > test.txt
+          echo "timestamp-$(date)" >> test.txt
+          echo "status-SUCCESS" >> test.txt
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
