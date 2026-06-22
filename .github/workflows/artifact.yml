@@ -8,16 +8,13 @@ jobs:
   upload:
     runs-on: ubuntu-latest
 
-    outputs:
-      upload_outputs: ${{ steps.generatefile.outputs.status_msg }}
-
 
     steps:
       - id: generatefile
         run: |
-          echo "_____New_file____" | tee test.txt
-          echo "timestamp-$(date)" | tee -a test.txt
-          echo "status-SUCCESS" | tee -a test.txt
+          echo "_____New_file____" > test.txt
+          echo "timestamp-$(date)" >>  test.txt
+          echo "status-SUCCESS" >> test.txt
           echo "status_msg=File generated successfully" >> "$GITHUB_OUTPUT"
 
       - name: upload artifacts
@@ -34,9 +31,14 @@ jobs:
     needs: upload
 
     steps:
-      - name: uses output from upload
-        env:
-          my_output: ${{ needs.upload.outputs.upload_outputs }}
+      - name: download_artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+          path: test.txt
 
-        run: echo "$my_output"
+
+      - name: print file
+        run: cat test.txt
+
 
