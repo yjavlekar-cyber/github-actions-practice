@@ -1,0 +1,14 @@
+name: read
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  to_read:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: to read from repo
+        run: echo "My secret is: ${{ secrets.MY_DEPOSITORY_SECRET }}
+
