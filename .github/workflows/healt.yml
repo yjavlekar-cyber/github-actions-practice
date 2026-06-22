@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
 
-job:
+jobs:
   view_health:
     runs-on: ubuntu-latest
 
