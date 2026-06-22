@@ -1,0 +1,22 @@
+name: health_check
+
+on:
+  push:
+    branches: [ "main" ]
+
+job:
+  view_health:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Explicitly enforcing pipefail
+        shell: bash
+        run: |
+          set -eo pipefail
+          invalid_command | grep "success"
+
+      - name: code checkout
+        uses: actions/checkout@v4
+
+      - name: script execution
+        run: ./healthcheck.sh
