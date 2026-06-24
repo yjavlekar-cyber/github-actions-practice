@@ -23,7 +23,7 @@ jobs:
 
       #This will login docker hub.
       - name: login to docker hub
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           username: ${{ vars.USERNAME }}
           password: ${{ secrets.PASSWORD }}
