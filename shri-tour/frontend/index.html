@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shri Tour Restaurant - Authentic Indian cuisine with a modern twist.">
+  <title>Shri Tour Restaurant | Authentic Indian Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">&#127869; Shri<span>Tour</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-reserve">Reserve Table</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">&#10022; Welcome to Shri Tour &#10022;</p>
+      <h1 class="hero-title">A Culinary Journey<br>Through <span class="gold">India</span></h1>
+      <p class="hero-desc">Experience the rich tapestry of Indian flavors, crafted with passion and served with love since 1998.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="img-card"><div class="img-placeholder">&#127835;</div></div>
+          <div class="img-card img-card-2"><div class="img-placeholder">&#128104;&#8205;&#127859;</div></div>
+        </div>
+        <div class="about-text">
+          <p class="section-tag">Our Story</p>
+          <h2 class="section-title">Tradition Meets <span class="gold">Innovation</span></h2>
+          <p>Founded in the heart of Shriwardhan, our restaurant brings together generations of culinary expertise with contemporary dining experiences.</p>
+          <p>Every dish tells a story - from the bustling streets of Mumbai to the serene coasts of Konkan, we bring India to your plate.</p>
+          <div class="stats">
+            <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Years</span></div>
+            <div class="stat"><span class="stat-num">150+</span><span class="stat-label">Dishes</span></div>
+            <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Happy Guests</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <p class="section-tag center">Our Menu</p>
+      <h2 class="section-title center">Signature <span class="gold">Dishes</span></h2>
+      <div class="menu-tabs">
+        <button class="tab active" data-tab="starters">Starters</button>
+        <button class="tab" data-tab="mains">Main Course</button>
+        <button class="tab" data-tab="desserts">Desserts</button>
+        <button class="tab" data-tab="drinks">Drinks</button>
+      </div>
+      <div id="menu-grid" class="menu-grid"></div>
+    </div>
+  </section>
+
+  <!-- Specials Section -->
+  <section id="specials" class="specials">
+    <div class="container">
+      <p class="section-tag center">Chef's Pick</p>
+      <h2 class="section-title center">Today's <span class="gold">Specials</span></h2>
+      <div class="specials-grid">
+        <div class="special-card featured">
+          <div class="special-badge">Chef's Choice</div>
+          <div class="special-emoji">&#127858;</div>
+          <h3>Konkan Fish Curry</h3>
+          <p>Fresh catch simmered in coconut gravy with raw mango and kokum.</p>
+          <span class="price">&#8377;650</span>
+        </div>
+        <div class="special-card">
+          <div class="special-emoji">&#129368;</div>
+          <h3>Malvani Mutton</h3>
+          <p>Slow-cooked mutton in aromatic Malvani spices, served with bhakri.</p>
+          <span class="price">&#8377;750</span>
+        </div>
+        <div class="special-card">
+          <div class="special-emoji">&#127848;</div>
+          <h3>Mango Shrikhand</h3>
+          <p>Creamy hung curd with Alphonso mango pulp and saffron.</p>
+          <span class="price">&#8377;300</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-tag center">Reviews</p>
+      <h2 class="section-title center">What Our <span class="gold">Guests</span> Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>The best Indian food outside of India. The Konkan fish curry is divine!</p>
+          <div class="reviewer"><strong>Priya Sharma</strong><span>Food Blogger</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>An unforgettable dining experience. Ambiance, service, food - everything perfect.</p>
+          <div class="reviewer"><strong>Rahul Deshmukh</strong><span>Regular Guest</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>Shri Tour takes you on a culinary journey. Every visit feels like a new adventure.</p>
+          <div class="reviewer"><strong>Anita Kulkarni</strong><span>Travel Writer</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-tag">Get In Touch</p>
+          <h2 class="section-title">Reserve Your <span class="gold">Table</span></h2>
+          <div class="info-item">
+            <span class="info-icon">&#128205;</span>
+            <div><strong>Address</strong><p>Shriwardhan Beach Road, Raigad, Maharashtra 402110</p></div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">&#128222;</span>
+            <div><strong>Phone</strong><p>+91 98765 43210</p></div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">&#128336;</span>
+            <div><strong>Hours</strong><p>Mon-Sun: 11:00 AM - 11:00 PM</p></div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">&#128231;</span>
+            <div><strong>Email</strong><p>hello@shritour.com</p></div>
+          </div>
+        </div>
+        <form id="reserve-form" class="contact-form">
+          <div class="form-row">
+            <input type="text" id="name-input" placeholder="Your Name" required>
+            <input type="email" id="email-input" placeholder="Email" required>
+          </div>
+          <div class="form-row">
+            <input type="date" id="date-input" required>
+            <select id="guests-input">
+              <option value="">Guests</option>
+              <option>1-2</option>
+              <option>3-4</option>
+              <option>5-6</option>
+              <option>7+</option>
+            </select>
+          </div>
+          <textarea id="message-input" rows="4" placeholder="Special requests..."></textarea>
+          <button type="submit" class="btn btn-primary full-width">Reserve Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo">&#127869; Shri<span>Tour</span></a>
+          <p class="footer-desc">A culinary journey through the flavors of India, right at the coast of Shriwardhan.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShriTour Restaurant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
