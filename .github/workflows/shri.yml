@@ -38,19 +38,21 @@ jobs:
       - name: docker tag and push backend
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag shri-backend ${{ secrets.PASSWORD }}/shri-backend:latest
+          docker tag shri-backend ${{ vars.PASSWORD }}/shri-backend:latest
           docker push ${{ vars.USERNAME }}/shri-backend:latest
   
   deploy_on_github: #this is job2
     runs-on: self-hosted #this job will run on self-hosted run which is our laptop as of now
+    need: build_and_push
+    
     steps:
       #This will pull the image
       - name: pull latest image(front)
-        uses: docker pull ${{ vars.USERNAME }}/shri-frontend:latest
+        run: docker pull ${{ vars.USERNAME }}/shri-frontend:latest
         
       
       - name: pull latest image(backend)
-        uses: docker pull ${{ vars.USERNAME }}/shri-backend:latest
+        run: docker pull ${{ vars.USERNAME }}/shri-backend:latest
 
       #This will stop any old containers.
       
