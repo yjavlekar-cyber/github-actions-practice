@@ -33,12 +33,14 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           docker tag shri-frontend ${{ vars.USERNAME }}/shri-frontend:latest
+          docker tag shri-frontend ${{ vars.USERNAME }}/shri-frontend:${{ github.sha }}
           docker push ${{ vars.USERNAME }}/shri-frontend:latest
 
       - name: docker tag and push backend
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag shri-backend ${{ vars.PASSWORD }}/shri-backend:latest
+          docker tag shri-backend ${{ vars.USERNAME }}/shri-backend:latest
+          docker tag shri-backend ${{ vars.USERNAME }}/shri-backend:${{ github.sha }}
           docker push ${{ vars.USERNAME }}/shri-backend:latest
   
   deploy_on_github: #this is job2
