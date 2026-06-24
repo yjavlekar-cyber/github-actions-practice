@@ -43,7 +43,7 @@ jobs:
   
   deploy_on_github: #this is job2
     runs-on: self-hosted #this job will run on self-hosted run which is our laptop as of now
-    need: build_and_push
+    needs: build_and_push
     
     steps:
       #This will pull the image
