@@ -1,0 +1,67 @@
+name: shriwardhan
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+  build_and_push: #this is job1
+    runs-on: ubuntu-latest
+
+    steps:
+      #code checkout will analyze our repository.
+      - name: Code checkout
+        uses: actions/checkout@v4
+
+      #This will build the image from our dockerfile.
+      - name: build image(front)
+        run: docker build -t shri-frontend ./frontend
+
+      - name: build image(backend)
+        run: docker build -t shri-backend ./backend
+
+      #This will login docker hub.
+      - name: login to docker hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+
+      #This will tag and push the images on dockerhub.
+      - name: docker tag and push frontend
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker tag shri-frontend ${{ vars.USERNAME }}/shri-frontend:latest
+          docker push ${{ vars.USERNAME }}/shri-frontend:latest
+
+      - name: docker tag and push backend
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker tag shri-backend ${{ secrets.PASSWORD }}/shri-backend:latest
+          docker push ${{ vars.USERNAME }}/shri-backend:latest
+  
+  deploy_on_github: #this is job2
+    runs-on: self-hosted #this job will run on self-hosted run which is our laptop as of now
+    steps:
+      #This will pull the image
+      - name: pull latest image(front)
+        uses: docker pull ${{ vars.USERNAME }}/shri-frontend:latest
+        
+      
+      - name: pull latest image(backend)
+        uses: docker pull ${{ vars.USERNAME }}/shri-backend:latest
+
+      #This will stop any old containers.
+      
+      - name: stop old containers
+        run: docker compose down || true
+      
+      #This will start new containers.
+      - name: start new containers
+        run: docker compose up -d
+
+
+
+
+
