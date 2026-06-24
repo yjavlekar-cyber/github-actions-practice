@@ -16,10 +16,10 @@ jobs:
 
       #This will build the image from our dockerfile.
       - name: build image(front)
-        run: docker build -t shri-frontend ./frontend
+        run: docker build -t shri-frontend ./shri-tour/frontend
 
       - name: build image(backend)
-        run: docker build -t shri-backend ./backend
+        run: docker build -t shri-backend ./shri-tour/backend
 
       #This will login docker hub.
       - name: login to docker hub
