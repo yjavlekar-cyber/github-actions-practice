@@ -68,7 +68,8 @@ jobs:
       #This will start new containers.
       - name: start new containers
         run: docker compose up -d
-
+        env:
+          DOCKER_USERNAME: ${{ vars.USERNAME }}
 
 
 
