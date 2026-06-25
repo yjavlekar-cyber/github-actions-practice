@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: ${DOCKER_USERNAME:-yourdockerhub}/shri-frontend:latest
+    image: ${{ vars.USERNAME }}/shri-frontend:latest
     container_name: shri-frontend
     ports:
       - "80:80"
@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   backend:
-    image: ${DOCKER_USERNAME:-yourdockerhub}/shri-backend:latest
+    image: ${{ secrets.PASSWORD }}/shri-backend:latest
     container_name: shri-backend
     ports:
       - "5000:5000"
