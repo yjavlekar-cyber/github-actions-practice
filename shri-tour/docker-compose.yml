@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: ${{ vars.USERNAME }}/shri-frontend:latest
+    image: $${{ vars.USERNAME }}/shri-frontend:latest
     container_name: shri-frontend
     ports:
       - "80:80"
