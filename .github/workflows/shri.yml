@@ -48,6 +48,10 @@ jobs:
     needs: build_and_push
     
     steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+
+
       #This will pull the image
       - name: pull latest image(front)
         run: docker pull ${{ vars.USERNAME }}/shri-frontend:latest
