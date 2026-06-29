@@ -20,7 +20,7 @@ jobs:
     needs: token
 
     steps:
-      - name: use output from job1
+      - name: use output from token
         env:
           my_output_1: ${{ needs.token.outputs.my_output }}
 

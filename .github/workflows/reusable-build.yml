@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      my_job_output: ${{ steps.version.outputs.version_string }}
+      my_job_output: ${{ steps.version.outputs.version }}
 
     steps:
       - name: code checkout
