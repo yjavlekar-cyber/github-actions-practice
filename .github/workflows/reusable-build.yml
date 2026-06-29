@@ -22,7 +22,7 @@ on:
 
 jobs:
   rreuse:
-    runs-on: ubuntu-latesti
+    runs-on: ubuntu-latest
 
     outputs:
       my_job_output: ${{ steps.version.outputs.version_string }}
