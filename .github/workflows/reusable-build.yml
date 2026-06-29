@@ -1,0 +1,43 @@
+name: reuse
+
+on:
+  workflow_call:
+    inputs:
+      app_name:
+        description: "new-app"
+        type: string
+        required: true
+
+      environment:
+        type: string
+        required: true
+        default: staging
+
+    secrets:
+      docker_token:
+        required: true
+
+jobs:
+  rreuse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v4
+
+      - name: prints
+        run: echo "Building $app_name for $environment"
+
+
+      - name: Check docker token status
+        run: |
+          if [ -n "${{ secrets.docker_token }}" ];then 
+
+            echo "Docker token is set: true"
+
+          else 
+            echo "Docker token is set: false"
+
+          fi
+
+
