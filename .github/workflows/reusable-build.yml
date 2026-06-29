@@ -18,7 +18,7 @@ on:
         required: true
 
     outputs:
-      my-outputs: ${{ jobs.rreuse.outputs.version }}
+      my-outputs: ${{ jobs.rreuse.outputs.my_job_output }}
 
 jobs:
   rreuse:
