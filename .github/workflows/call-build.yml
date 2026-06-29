@@ -21,4 +21,6 @@ jobs:
     steps:
       - name: use output from job1
         env:
-          my_output: ${{ needs.rreuse.outputs.my_output }}
+          my_output_1: ${{ needs.rreuse.outputs.my_output }}
+
+        run: echo "$my_output_1"
