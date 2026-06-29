@@ -6,7 +6,7 @@ on:
 
 jobs:
   token:
-    uses: ./.github/workflows/reusable_build.yml
+    uses: ./.github/workflows/reusable-build.yml
 
     with:
       app_name: "my-web-app"
