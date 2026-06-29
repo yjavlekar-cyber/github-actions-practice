@@ -16,6 +16,7 @@ jobs:
 
 
   second:
+    runs-on: ubuntu_latest
     needs: token
 
     steps:
