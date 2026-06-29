@@ -18,11 +18,14 @@ on:
         required: true
 
     outputs:
-      my-outputs: ${{ steps.version.outputs.version }}
+      my-outputs: ${{ jobs.rreuse.outputs.version }}
 
 jobs:
   rreuse:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latesti
+
+    outputs:
+      my_job_output: ${{ steps.version.outputs.version_string }}
 
     steps:
       - name: code checkout
