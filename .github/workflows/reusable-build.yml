@@ -17,6 +17,9 @@ on:
       docker_token:
         required: true
 
+    outputs:
+      my-outputs: ${{ steps.version.outputs.version }}
+
 jobs:
   rreuse:
     runs-on: ubuntu-latest
@@ -24,6 +27,12 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v4
+
+
+      - id: version
+        run: |
+          SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+          echo "version=v1.0-${SHORT_SHA}" >> $GITHUB_OUTPUT
 
       - name: prints
         run: echo "Building $app_name for $environment"
