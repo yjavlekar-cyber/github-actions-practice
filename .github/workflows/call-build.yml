@@ -13,3 +13,12 @@ jobs:
       environment: "production"
     secrets:
       docker_token: ${{ secrets.DOCKER_TOKEN }}
+
+
+  second:
+    needs: token
+
+    steps:
+      - name: use output from job1
+        env:
+          my_output: ${{ needs.rreuse.outputs.my_output }}
