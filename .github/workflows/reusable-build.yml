@@ -8,10 +8,10 @@ on:
         type: string
         required: true
 
-      environment:
-        type: string
-        required: true
-        default: staging
+    environment:
+      type: string
+      required: true
+      default: staging
 
     secrets:
       docker_token:
