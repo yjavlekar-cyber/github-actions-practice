@@ -12,27 +12,27 @@ inputs:
     type: string
     required: true
 
-  outputs:
-    greeted:
-      value: ${{ steps.print.outputs.greeted }}
+outputs:
+  greeted:
+    value: ${{ steps.print.outputs.greeted }}
 
 
 runs:
   using: composite
 
-    steps:
+  steps:
       
-      - name: greeting
-        run: echo "hello! ${{ inputs.name }}
+    - name: greeting
+      run: echo "hello! ${{ inputs.name }}"
 
-      - name: date
-        run: echo "$(date)"
+    - name: date
+      run: echo "$(date)"
 
-      - name: runner
-        run: echo "${{ runner.os }}"
+    - name: runner
+      run: echo "${{ runner.os }}"
       
-      - id: print
-        run: echo "greeted_status=true" >> $GITHUB_OUTPUT
+    - id: print
+      run: echo "greeted_status=true" >> $GITHUB_OUTPUT
 
 
 
