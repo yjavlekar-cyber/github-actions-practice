@@ -28,6 +28,7 @@ jobs:
       - name: reads branch name
         run: | 
           BRANCH="${{ github.head_ref }}"
+
           echo "branch= $BRANCH"
           if [[ "$BRANCH" =~ ^(feature|fix|docs)/.+ ]]; then
            echo "Branch name follows convention."
