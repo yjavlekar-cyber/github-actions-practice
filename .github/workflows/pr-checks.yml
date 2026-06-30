@@ -16,9 +16,18 @@ jobs:
       - name: Check file sizes
         run: |
           git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
+          FAILED=0
           for f in $(git diff --name-only origin/${{ github.event.pull_request.base.ref }} HEAD); do
-          [ -f "$f" ] && [ "$(stat -c%s "$f")" -gt 1048576 ] && echo "::error file=$f::File exceeds 1MB" && exit 1
+            if [ -f "$f" ] && [ "$(stat -c%s "$f")" -gt 1048576 ]; then
+              echo "::error file=$f::File exceeds 1MB"
+              FAILED=1
+            fi
           done
+          if [ "$FAILED" -eq 1 ]; then
+            exit 1
+          fi
+          echo "All files are within the size limit."
+          exit 0
 
 
   branch-name-check:
