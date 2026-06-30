@@ -19,6 +19,11 @@ inputs:
 jobs:
   new:
     using: composite
+  runs-on: ubuntu-latest
+
+  outputs:
+    my-job-outputs: ${{ steps.print.outputs.greeted_status }}
+
 
     steps:
       
