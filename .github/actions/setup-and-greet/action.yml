@@ -23,15 +23,19 @@ runs:
   steps:
       
     - name: greeting
+      shell: bash
       run: echo "hello! ${{ inputs.name }}"
 
     - name: date
+      shell: bash
       run: echo "$(date)"
 
     - name: runner
+      shell: bash
       run: echo "${{ runner.os }}"
       
     - id: print
+      shell: bash
       run: echo "greeted_status=true" >> $GITHUB_OUTPUT
 
 
