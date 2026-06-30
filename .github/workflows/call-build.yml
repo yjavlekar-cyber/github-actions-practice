@@ -16,8 +16,8 @@ jobs:
 
 
   second:
-    runs-on: ubuntu-latest
     needs: token
+    runs-on: ubuntu-latest
 
     steps:
       - name: use output from token
