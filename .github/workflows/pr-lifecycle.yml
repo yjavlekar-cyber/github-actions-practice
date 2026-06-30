@@ -1,0 +1,26 @@
+name: lifecycle
+
+on:
+  pull_request:
+    types: [ "opened", "reopened", "synchronize", "closed" ]
+
+jobs:
+  to_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print triggers
+        runs: |
+
+          echo "${{ github.event.action }}"
+          echo "${{ github.event.pull_request.title }}"
+          echo "${{ github.event.pull_request.user.login }}"
+          echo "${{ github.event.pull_request.base.ref }}" 
+          echo "${{ github.event.pull_request.head.ref }}"
+
+
+      - name: post-merge actions
+        if: github.event.pull_request.merged == true
+        run: |
+          echo "Success! This step runs only because the PR was closed and merged."
+          echo "Cleaning up or deploying for branch: ${{ github.event.pull_request.head.ref }}"
