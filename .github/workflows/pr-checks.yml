@@ -1,0 +1,53 @@
+name: checks
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  fils-size-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        run: actions/checkout@v4
+
+      - name: Check file sizes
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
+          for f in $(git diff --name-only origin/${{ github.event.pull_request.base.ref }} HEAD); do
+          [ -f "$f" ] && [ "$(stat -c%s "$f")" -gt 1048576 ] && echo "::error file=$f::File exceeds 1MB" && exit 1
+          done
+
+
+  branch-name-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: reads branch name
+        run: | 
+          BRANCH= "${{ github.head_ref }}"
+          echo "branch= $BRANCH"
+          if [[ "$BRANCH" =~ ^(feature|fix|docs)/.+ ]]; then
+           echo "Branch name follows convention."
+          else
+            echo "::error::Branch name '$BRANCH' does not match feature/*, fix/*, or docs/*"
+            exit 1
+          fi
+
+
+  pr-body-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pr body
+        run: |
+          BODY="${{ github.event.pull_request.body }}"
+          if [ -z "$BODY" ]; then
+            echo "::warning::PR description is empty. Please add a description."
+          else
+            echo "PR description present."
+          fi
+
+
