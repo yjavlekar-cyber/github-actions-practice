@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: print triggers
-        runs: |
+        run: |
 
           echo "${{ github.event.action }}"
           echo "${{ github.event.pull_request.title }}"
