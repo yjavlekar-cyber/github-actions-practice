@@ -1,0 +1,39 @@
+name: compose
+
+inputs:
+  name:
+    description: yogesh
+    type: string
+    required: true
+    default: yogesh
+  language:
+    description: the greeting language
+    default: 'en'
+    type: string
+    required: true
+
+  outputs:
+    description:
+      value: ${{ jobs.new.outputs.greeted_status }}
+
+jobs:
+  new:
+    using: composite
+
+    steps:
+      
+      - name: greeting
+        run: echo "hello! ${{ inputs.name }}
+
+      - name: date
+        run: echo "$(date)"
+
+      - name: runner
+        run: echo "${{ runner.os }}"
+      
+      - id: print
+        run: echo "greeted_status=true" >> $GITHUB_OUTPUT
+
+
+
+
