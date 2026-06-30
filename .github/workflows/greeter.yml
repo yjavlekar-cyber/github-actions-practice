@@ -17,8 +17,8 @@ jobs:
       - id: greeting
         uses: ./.github/actions/setup-and-greet
         with:
-          name: "Yogesh"
+          name: "yogesh"
 
       - name: Verify Greeting Output
-        run: echo "Was the user greeted? ${{ steps.run-greeting.outputs.greeted }}"
+        run: echo "Was the user greeted? ${{ needs.greeting.outputs.description }}"
 
