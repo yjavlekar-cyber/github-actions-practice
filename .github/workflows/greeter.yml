@@ -20,5 +20,5 @@ jobs:
           name: "yogesh"
 
       - name: Verify Greeting Output
-        run: echo "Was the user greeted? ${{ needs.greeting.outputs.description }}"
+        run: echo "Was the user greeted? ${{ steps.greeting.outputs.greeted }}"
 
