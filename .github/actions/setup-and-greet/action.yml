@@ -13,17 +13,12 @@ inputs:
     required: true
 
   outputs:
-    description:
-      value: ${{ jobs.new.outputs.my-job-outputs }}
+    greeted:
+      value: ${{ steps.print.outputs.greeted }}
 
-jobs:
-  new:
-    using: composite
-  runs-on: ubuntu-latest
 
-  outputs:
-    my-job-outputs: ${{ steps.print.outputs.greeted_status }}
-
+runs:
+  using: composite
 
     steps:
       
