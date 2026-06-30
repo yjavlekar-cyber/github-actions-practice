@@ -39,7 +39,7 @@ jobs:
           echo "version=v1.0-${SHORT_SHA}" >> $GITHUB_OUTPUT
 
       - name: prints
-        run: echo "Building $app_name for $environment"
+        run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
 
       - name: Check docker token status

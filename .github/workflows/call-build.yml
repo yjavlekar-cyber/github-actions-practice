@@ -21,7 +21,4 @@ jobs:
 
     steps:
       - name: use output from token
-        env:
-          my_output_1: ${{ needs.token.outputs.my_output }}
-
-        run: echo "$my_output_1"
+        run: "${{ needs.token.outputs.my_output }}"
