@@ -8,7 +8,7 @@ jobs:
   token:
     uses: ./.github/workflows/reusable-build.yml
 
-    #with:
+    with:
       app_name: "my-web-app"
       environment: "production"
     secrets:
@@ -21,4 +21,4 @@ jobs:
 
     steps:
       - name: use output from token
-        run: "${{ needs.token.outputs.my_output }}"
+        run: echo "${{ needs.token.outputs.my_output }}"
