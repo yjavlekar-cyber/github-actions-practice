@@ -1,0 +1,22 @@
+name: smart_triggers
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'app/**'
+
+    paths-ignore:
+      - '*.md'
+
+    branches: [ "main" ]
+
+jobs:
+  trigger_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: show changed files
+        run: |
+          echo "${{ github.event.commits[0].added }}"
+          echo "${{ github.event.commits[0].modified }}"
