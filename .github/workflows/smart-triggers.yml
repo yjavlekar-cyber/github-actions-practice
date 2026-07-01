@@ -6,9 +6,6 @@ on:
       - 'src/**'
       - 'app/**'
 
-    paths-ignore:
-      - '*.md'
-
     branches: [ "main" ]
 
 jobs:
